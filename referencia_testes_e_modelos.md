@@ -570,6 +570,29 @@ mpg_vals = np.array([21.0, 21.0, 22.8, 21.4, 18.7, 18.1, 14.3, 24.4, 22.8, 19.2]
 spearman_res = stats.spearmanr(hp_vals, mpg_vals)
 report_test("Correlação de Spearman (Monotônica)", spearman_res, stat_label="ρ")
 
+def interpretar_forca_spearman(rho):
+    # Obtém o valor absoluto para avaliar a força independente da direção da correlação
+    abs_rho = abs(rho)
+    
+    if abs_rho < 0.1:
+        return "Inexistente ou muito fraca"
+    elif abs_rho < 0.3:
+        return "Fraca"
+    elif abs_rho < 0.5:
+        return "Moderada"
+    elif abs_rho < 0.7:
+        return "Forte"
+    else:
+        return "Muito forte"
+
+# Exemplo de uso com o resultado obtido de Spearman no dataset cafe
+rho_coef = spearman_res[0]
+forca_spearman = interpretar_forca_spearman(rho_coef)
+direcao_spearman = "negativa" if rho_coef < 0 else "positiva"
+
+print(f"O coeficiente rho de Spearman é {rho_coef:.4f}")
+print(f"Direção da associação: {direcao_spearman.upper()}")
+print(f"Força da associação: {forca_spearman.upper()}")
 ```
 
 ### Cria matriz de correlação (pearson ou spearman)
