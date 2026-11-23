@@ -464,6 +464,10 @@ Substituto não paramétrico para o teste $t$ de duas amostras independentes. Av
 - H_0: não há diferença na distribuição de x nos dois grupos
 - H_1: Um grupo domina o outroH₀
 
+**Exemplo do prof**
+- H_0: Nenhum layout domina: P(A > B) = P(B > A).
+- H_1: Um layout tende a gerar tempos menores que o outro.
+
 **Se rejeitar H_0, usar o delta de cliff para achar o sentido e força**
 
 ```python
@@ -503,7 +507,7 @@ print(f"Quem domina: {"grupo A" if delta_c > 0 else "grupo B" }")
 
 Testa se a mediana do gruop é igual ao alvo
 
-**Se rejeitou, veja a mediana da amostra, se for maior, é maior**
+**Se rejeitou, veja a mediana da amostra, se for maior, é maior que a meta**
 
 ```python
 import numpy as np
@@ -531,8 +535,9 @@ H₁: A mediana das diferenças não é zero. (MD ≠ 0)
 
 **Kruskal-wallis**
 
-H₀: As três distribuições de notas são iguais.
-H₁: Pelo menos um algoritmo tende a receber notas maiores que outro.
+**Hipóteses do prof**
+- H_0: As três distribuições de notas são iguais.
+- H_1: Pelo menos um algoritmo tende a receber notas maiores que outro.
 
 **Se rejeitar, usa o dunn para formar a tabela e ver quais pares sao diferentes (ver se < 0,05)**
 
