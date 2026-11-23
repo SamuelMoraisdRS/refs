@@ -535,8 +535,9 @@ H₁: A mediana das diferenças não é zero. (MD ≠ 0)
 
 **Kruskal-wallis**
 
-H₀: As três distribuições de notas são iguais.
-H₁: Pelo menos um algoritmo tende a receber notas maiores que outro.
+**Hipóteses do prof**
+- H_0: As três distribuições de notas são iguais.
+- H_1: Pelo menos um algoritmo tende a receber notas maiores que outro.
 
 **Se rejeitar, usa o dunn para formar a tabela e ver quais pares sao diferentes (ver se < 0,05)**
 
