@@ -499,6 +499,42 @@ print(f"Quem domina: {"grupo A" if delta_c > 0 else "grupo B" }")
 ### 4.3 Teste de Wilcoxon (Amostras Pareadas) & Kruskal-Wallis (ANOVA Não Paramétrica)
 
 
+**Wilcoxon de uma amostra**
+
+Testa se a mediana do gruop é igual ao alvo
+
+**Se rejeitou, veja a mediana da amostra, se for maior, é maior**
+
+```python
+import numpy as np
+from scipy import stats
+
+# Dados do Grupo 1
+grupo_1 = sleep[sleep['group'] == 1]['extra']
+
+# Valor de referência (mediana teórica que queremos testar)
+valor_referencia = 0.0
+
+# Realizando o teste de uma amostra (passando a diferença)
+estatistica, p_valor = stats.wilcoxon(grupo_1 - valor_referencia, alternative='two-sided')
+
+print(f"Estatística W: {estatistica:.4f}")
+print(f"p-valor: {p_valor:.4f}")
+```
+
+
+**Wilcoxon pareado**
+
+H₀: A mediana das diferenças é zero. (MD = 0)
+H₁: A mediana das diferenças não é zero. (MD ≠ 0)
+
+
+**Kruskal-wallis**
+
+H₀: As três distribuições de notas são iguais.
+H₁: Pelo menos um algoritmo tende a receber notas maiores que outro.
+
+**Se rejeitar, usa o dunn para formar a tabela e ver quais pares sao diferentes (ver se < 0,05)**
 
 ```python
 # 1. Wilcoxon Signed-Rank Test (substituto do t pareado)
