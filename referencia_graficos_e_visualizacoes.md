@@ -109,6 +109,23 @@ ax2.set_ylabel('Milhas por Galão (mpg)')
 plt.tight_layout()
 plt.show()
 ```
+#### Se tiver duas np.array
+```python
+# Opção 2: Se preferir usar estritamente o Seaborn moderno com arrays isolados,
+# o jeito ideal é criar um dicionário rápido para manter as labels corretas:
+
+fig, ax = plt.subplots(figsize=(8, 5))
+
+data_dict = {'Grupo A': grupo_a, 'Grupo B': grupo_b}
+
+sns.boxplot(data=data_dict, palette=['#e69f00', '#0072b2'], width=0.5, ax=ax)
+sns.stripplot(data=data_dict, color='black', alpha=0.6, jitter=0.15, ax=ax)
+
+ax.set_title('Dias de Internação por Grupo (Seaborn com Dicionário)')
+ax.set_ylabel('Dias')
+plt.tight_layout()
+plt.show()
+``
 
 ### 2.3 Violin Plot (Densidade + Quartis)
 O **Violin Plot** combina a curva de densidade estimada nas laterais com a visualização dos quartis internamente, sendo ótimo para comparar distribuições bimodais.
