@@ -34,12 +34,15 @@ Este notebook foi estruturado como um **guia completo de consulta rápida para p
 
 
 ```python
+!pip install scikit_posthocs
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from scipy import stats
 from statsmodels.stats.proportion import proportions_ztest, proportion_confint
+import scikit_posthocs as sp
 
 # Bibliotecas de Aprendizado de Máquina (Scikit-Learn)
 from sklearn.dummy import DummyRegressor
