@@ -464,6 +464,10 @@ Substituto não paramétrico para o teste $t$ de duas amostras independentes. Av
 - H_0: não há diferença na distribuição de x nos dois grupos
 - H_1: Um grupo domina o outroH₀
 
+**Exemplo do prof**
+- H_0: Nenhum layout domina: P(A > B) = P(B > A).
+- H_1: Um layout tende a gerar tempos menores que o outro.
+
 **Se rejeitar H_0, usar o delta de cliff para achar o sentido e força**
 
 ```python
