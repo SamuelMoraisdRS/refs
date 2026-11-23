@@ -507,7 +507,7 @@ print(f"Quem domina: {"grupo A" if delta_c > 0 else "grupo B" }")
 
 Testa se a mediana do gruop é igual ao alvo
 
-**Se rejeitou, veja a mediana da amostra, se for maior, é maior**
+**Se rejeitou, veja a mediana da amostra, se for maior, é maior que a meta**
 
 ```python
 import numpy as np
